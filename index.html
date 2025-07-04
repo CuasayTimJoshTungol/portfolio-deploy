@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tim Josh | UI/UX Design Enthusiast | WordPress Developer</title>
+  <link rel="icon" href="img/pic.jpg.jpg" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .inter {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Animation-safe base styles */
+    .layout-container {
+      transform: translateZ(0); /* GPU acceleration */
+      will-change: transform; /* Optimize for animations */
+    }
+    .content-box {
+      backface-visibility: hidden; /* Prevent flickering */
+      transform-style: preserve-3d;
+    }
+
+     @keyframes shine {
+    0% {
+      left: -100%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 0px rgba(0, 204, 255, 0);
+    }
+    50% {
+      box-shadow: 0 0 14px 3px rgba(0, 204, 255, 0.6); /* light blue glow */
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  .animate-\[shine_1\.5s_ease-in-out_infinite\] {
+    animation: shine 1.5s ease-in-out infinite;
+  }
+
+  .glow-pulse {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  /* Swipe container styles */
+  .swipe-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .swipe-wrapper {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .swipe-slide {
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  /* Hide scrollbar */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  </style>
+
+</head>
+
+<body class="flex justify-center items-start bg-black">
+  <!-- Layout Container -->
+  <div class="w-full max-w-[1440px] bg-[#000000] relative layout-container">
+    
+    <!-- Profile + Name Row -->
+    <div class="flex flex-col xl:flex-row items-center xl:items-start gap-6 xl:gap-0 mt-[32px] mx-4 xl:ml-[115px] xl:mr-0">
+      <!-- Profile Frame -->
+      <div class="w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] xl:w-[225px] xl:h-[227px] bg-[#A3A0A0] rounded-[12px] flex justify-center items-center overflow-hidden transform transition-all duration-200 flex-shrink-0">
+        <img src="Profile.jpg" alt="Profile" class="w-full h-full object-cover" />
+      </div>
+
+      <!-- Name + Location + Description + CTA -->
+      <div class="xl:ml-[46px] xl:mt-[27.5px] flex flex-col items-center xl:items-start text-center xl:text-left content-box">
+        <!-- Name -->
+       <h1 class="text-white font-bold text-[24px] sm:text-[28px] xl:text-[29px] leading-[32px] sm:leading-[36px] xl:leading-[40px] transform transition-all duration-200" style="font-family: 'Montserrat', sans-serif;">
+         Tim Josh
+       </h1>
+
+        <!-- Location -->
+        <div class="flex items-center justify-center xl:justify-start gap-[6px] mt-[8px] inter text-white text-[14px] leading-[24px] font-normal">
+          <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span class="block overflow-hidden text-ellipsis">
+            Socorro, Mimaropa, Philippines
+          </span>
+        </div>
+
+        <!-- Description -->
+        <p class="inter text-white text-[14px] sm:text-[16px] leading-[20px] sm:leading-[22px] font-normal mt-[12px] transform transition-all duration-200 max-w-[300px] xl:max-w-none">
+          UI/UX Design Enthusiast | WordPress Developer
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-[20px] xl:mt-[24px] flex flex-col sm:flex-row xl:flex-row gap-[10px] w-full sm:w-auto content-box">
+          <button onclick="downloadViewAndPrintCV()"
+            class="relative overflow-hidden flex h-[40px] px-[15px] py-[8px] items-center justify-center gap-[8px] rounded-[6px] bg-white text-black inter text-[14px] leading-[24px] font-normal tracking-[-0.32px] transform transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="sm:hidden">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Download CV
+          </button>
+
+          <button onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=cuasaytimjosh@gmail.com', '_blank')" 
+             class="flex items-center justify-center w-full sm:w-[137px] px-[16px] py-[7px] h-[40px] gap-[8px] rounded-[6px] border border-[#A3A0A0] inter bg-transparent text-white text-[14px] leading-[24px] font-normal tracking-[-0.32px] transform transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4V4zm0 0l8 8 8-8" />
+            </svg>
+            <span>Send Email</span>
+          </button>
+
+          <a href="https://www.figma.com/design/sFLOMUl9c5k9Jdt0QDdYPH/Tim-Josh-Cuasay---Portfolio-2025?node-id=1-3&t=cS4YNq4DEPsCOpVn-1" class="w-full sm:w-auto">
+            <button class="relative overflow-hidden flex h-[40px] px-[15px] py-[8px] items-center justify-center gap-[8px] rounded-[6px] bg-black text-white inter text-[14px] leading-[24px] font-normal tracking-[-0.32px] transform transition-all duration-200 hover:scale-[1.03] active:scale-[0.98] glow-pulse w-full sm:w-auto">
+            <!-- Game Controller Icon -->
+             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.354-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.015-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.354-3.019 3.019s1.354 3.019 3.019 3.019h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49 4.49 2.014 4.49 4.49-2.014 4.49-4.392 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019 3.019-1.355 3.019-3.019-1.355-3.019-3.019-3.019z"/>
+             </svg>
+             Figma Playground
+            <!-- Shine Animation Layer -->
+            <span class="absolute top-0 left-[-100%] w-[60%] h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-70 transform skew-x-[-20deg] animate-[shine_1.5s_ease-in-out_infinite]"></span>
+           </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- About and Hobby Containers -->
+    <div class="flex flex-col xl:flex-row gap-4 xl:gap-[12px] mx-4 xl:ml-[115px] xl:mr-0 mt-12 xl:mt-[64px] content-box">
+      <!-- About Container -->
+      <div class="w-full xl:w-[720px] px-[20px] py-[24px] flex flex-col items-start gap-[10px] rounded-[16px] border border-[#A3A0A0]/20 bg-[#111] transform transition-all duration-200">
+        <!-- Icon + About Label -->
+        <div class="flex items-center gap-[8px] mt-[4px]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 7V6a2 2 0 00-2-2h-4a2 2 0 00-2 2v1M3 9a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+        </svg>
+          <p class="text-white font-bold text-[18px] xl:text-[20px] leading-[24px]" style="font-family: 'Montserrat', sans-serif;">About</p>
+        </div>
+
+        <!-- Description Text -->
+        <p class="inter text-white text-[14px] xl:text-[16px] leading-[22px] xl:leading-[24px] font-normal mt-[14px]">
+          I'm a passionate UI/UX Design Enthusiast with hands-on experience in creating responsive 
+          and user-friendly interfaces. I specialize in translating ideas into polished designs 
+          through wireframing, prototyping, and high-fidelity mockups using Figma. My work emphasizes 
+          clean design principles, usability, and accessibility to deliver seamless user experiences. 
+          In addition to design, I also build and customize WordPress websites, ensuring they're easy 
+          to manage and aligned with client goals. While I'm continuously learning and evolving, my core 
+          focus remains on intuitive design, system consistency, and modern design workflows.
+          Sometimes, I also develop my projects using code bringing my designs to life with HTML5, CSS, 
+          JavaScript, and Tailwind CSS.
+        </p>
+      </div>
+
+      <!-- Hobby Container -->
+      <div class="w-full xl:w-[478px] px-[20px] py-[24px] flex flex-col gap-[10px] rounded-[16px] border border-[#A3A0A0]/20 bg-[#111] transform transition-all duration-200">
+        <div class="flex items-center gap-[8px] mt-[4px]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="white" viewBox="0 0 256 256">
+           <path d="M240,64a16,16,0,0,0-16-16H168a63.4,63.4,0,0,0-40,14.8A63.4,63.4,0,0,0,88,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H88a47.7,47.7,0,0,1,32,12v.2a8,8,0,0,0,16,0V220a47.7,47.7,0,0,1,32-12h56a16,16,0,0,0,16-16ZM88,192H32V64H88a47.7,47.7,0,0,1,32,12V204.2A63.2,63.2,0,0,0,88,192Zm136,0H168a63.2,63.2,0,0,0-32,12.2V76A47.7,47.7,0,0,1,168,64h56Z"/>
+          </svg>
+          <p class="text-white font-bold text-[18px] xl:text-[20px] leading-[24px]" style="font-family: 'Montserrat', sans-serif;">Hobby</p>
+        </div>
+
+        <p class="inter text-white text-[14px] xl:text-[16px] leading-[22px] xl:leading-[24px] font-normal mt-[14px]">
+          When I'm done working on a design layout and I'm not developing it, my time is focused on 
+          learning more advanced tools that I can use in my future job, and of course I go back to 
+          coding and learning in-demand frameworks or languages.
+        </p>
+
+        <p class="inter text-white text-[14px] xl:text-[16px] leading-[22px] xl:leading-[24px] font-normal mt-[8px] xl:mt-[14px]">
+          Additionally, I enjoy gaming as a way to unwind it keeps my reflexes sharp and my mind active, 
+          making it the perfect recharge before diving back into coding and exploring new technologies.
+        </p>
+      </div>
+    </div>
+
+    <!-- Tech Stack and Experience Containers -->
+    <div class="flex flex-col xl:flex-row gap-4 xl:gap-[12px] mx-4 xl:ml-[115px] xl:mr-0 mt-4 xl:mt-[12px] content-box">
+      <!-- Tech Stack Container -->
+      <div class="w-full xl:w-[720px] px-[20px] py-[24px] flex flex-col items-start gap-[10px] rounded-[16px] border border-[#A3A0A0]/20 bg-[#111] transform transition-all duration-200">
+        <div class="flex items-center justify-between w-full">
+          <div class="flex items-center gap-[8px] mt-[4px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="white" viewBox="0 0 256 256">
+              <path d="M215.39,200.61,152,137.94V48h8a8,8,0,0,0,0-16H96a8,8,0,0,0,0,16h8v89.94L40.61,200.61A16,16,0,0,0,52,228H204a16,16,0,0,0,11.39-27.39ZM57.25,216,128,145.25,198.75,216Z"/>
+            </svg>
+            <p class="text-white font-bold text-[18px] xl:text-[20px] leading-[24px]" style="font-family: 'Montserrat', sans-serif;">Tech Stack</p>
+          </div>
+          <a href="Tech.html" class="text-white font-montserrat text-[14px] leading-[17px] font-medium hover:text-yellow-400 transition-colors duration-200">
+             View All
+          </a>
+        </div>
+
+        <!-- Design Tools -->
+        <span class="mt-[20px] xl:mt-[32px] font-montserrat font-semibold text-[16px] xl:text-[18px] leading-[22px] text-white">Design Tools</span>
+        <div class="mt-[8px] xl:mt-[12px] flex flex-wrap gap-[8px] xl:gap-[12px]">
+              <button class="flex px-[12px] py-[4px] justify-center items-center gap-[6px] rounded-[4px] border border-[#A3A0A0] text-white font-inter text-[12px] leading-[24px] font-normal tracking-[-0.24px]">
+                Figma
+              </button>
+              <button class="flex px-[12px] py-[4px] justify-center items-center gap-[6px] rounded-[4px] border border-[#A3A0A0] text-white font-inter text-[12px] leading-[24px] font-normal tracking-[-0.24px]">
+                Framer
+              </button>
+              <button class="flex px-[12px] py-[4px] justify-center items-center gap-[6px] rounded-[4px] border border-[#A3A0A0] text-white font-inter text-[12px] leading-[24px] font-normal tracking-[-0.24px]">
+                Photoshop
+              </button>
+              <button class="flex px-[12px] py-[4px] justify-center items-center gap-[6px] rounded-[4px] border border-[#A3A0A0] text-white font-inter text-[12px] leading-[24px] font-normal tracking-[-0.24px]">
+                 Canva
+            </button>
+        </div>
+
+        <!-- CMS & No-Code -->
+        <span class="mt-[20px] xl:mt-[32px] font-montserrat font-semibold text-[16px] xl:text-[18px] leading-[22px] text-white">CMS & No-Code</span>
+        <div class="mt-[8px] xl:mt-[12px] flex flex-wrap gap-[8px] xl:gap-[12px]">
+               <button class="flex px-[12px] py-[4px] justify-center items-center gap-[6px] rounded-[4px] border border-[#A3A0A0] text-white font-inter text-[12px] leading-[24px] font-normal tracking-[-0.24px]">
+                WordPress
+               </button>
+        </div>
+
+        <!-- Front-End / Back-End -->
+         <span class="mt-[20px] xl:mt-[32px] font-montserrat font-semibold text-[16px] xl:text-[18px] leading-[22px] text-white">Front-End / Back-End</span>
+        <div class="mt-[8px] xl:mt-[12px] flex flex-wrap gap-[8px] xl:gap-[12px]">
+               <button class="flex items-center gap-[6px] px-[12px] py-[4px] border border-[#A3A0A0] rounded-[4px] text-white text-[12px] font-inter leading-[24px] tracking-[-0.24px]">
+                 HTML5
+               </button>
+               <button class="flex items-center gap-[6px] px-[12px] py-[4px] border border-[#A3A0A0] rounded-[4px] text-white text-[12px] font-inter leading-[24px] tracking-[-0.24px]">
+                 JavaScript
+               </button>  
+                <button class="flex items-center gap-[6px] px-[12px] py-[4px] border border-[#A3A0A0] rounded-[4px] text-white text-[12px] font-inter leading-[24px] tracking-[-0.24px]">
+                 Tailwind CSS
+                </button>
+               <button class="flex px-[12px] py-[4px] justify-center items-center gap-[6px] rounded-[4px] border border-[#A3A0A0] text-white font-inter text-[12px] leading-[24px] font-normal tracking-[-0.24px]">
+                PHP
+               </button>
+               <button class="flex px-[12px] py-[4px] justify-center items-center gap-[2px] rounded-[4px] border border-[#A3A0A0] text-white font-inter text-[12px] leading-[24px] font-normal tracking-[-0.24px]">
+                C-Sharp
+               </button>
+               <button class="flex px-[12px] py-[4px] justify-center items-center gap-[2px] rounded-[4px] border border-[#A3A0A0] text-white font-inter text-[12px] leading-[24px] font-normal tracking-[-0.24px]">
+                Java
+               </button>
+               <button class="flex px-[12px] py-[4px] justify-center items-center gap-[2px] rounded-[4px] border border-[#A3A0A0] text-white font-inter text-[12px] leading-[24px] font-normal tracking-[-0.24px]">
+                Laravel
+               </button>
+        </div>
+    </div>
+
+      <!-- Experience Container -->
+      <div class="w-full xl:w-[478px] px-[20px] py-[24px] flex flex-col items-start gap-[10px] rounded-[16px] border border-[#A3A0A0]/20 bg-[#111] transform transition-all duration-200">
+        <div class="flex items-center justify-between w-full">
+          <div class="flex items-center gap-[8px] mt-[4px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7V6a2 2 0 00-2-2h-4a2 2 0 00-2 2v1M3 9a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+          </svg>
+            <p class="text-white font-bold text-[18px] xl:text-[20px] leading-[24px]" style="font-family: 'Montserrat', sans-serif;">Experience</p>
+          </div>
+          <a href="Experience.html" class="text-white font-montserrat text-[14px] leading-[17px] font-medium hover:text-yellow-400 transition-colors duration-200">
+           View All
+          </a>
+        </div>
+
+         <div class="mt-[13px] w-full p-[12px] flex flex-col gap-[8px] rounded-[8px] border border-[#A3A0A0]/30 bg-black relative group overflow-hidden">
+          <!-- Hover Circle -->
+          <div class="absolute top-[12px] right-[12px] w-[10px] h-[10px] rounded-full bg-[#A3A0A0]/60 scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out"></div>
+
+          <p class="text-white font-bold text-[14px] xl:text-[16px] leading-[20px] xl:leading-[24px] pr-6" style="font-family: 'Montserrat', sans-serif;">
+            UI/UX Designer | WordPress Developer
+          </p>
+          <p class="text-[#FFFFFF]/30 font-normal text-[12px] xl:text-[14px] leading-[18px] xl:leading-[20px]" style="font-family: 'Inter', sans-serif;">
+            Intern at Elephant in the Boardroom Philippines
+          </p>
+          <div class="mt-[12px] w-full flex justify-end">
+            <p class="text-[#FFFFFF]/60 text-[12px] xl:text-[14px] mr-[6px]" style="font-family: 'Inter', sans-serif;">
+              2025
+            </p>
+          </div>
+        </div>
+
+         <div class="mt-[2px] w-full p-[12px] flex flex-col gap-[8px] rounded-[8px] border border-[#A3A0A0]/30 bg-black relative group overflow-hidden">
+          <!-- Hover Circle -->
+          <div class="absolute top-[12px] right-[12px] w-[10px] h-[10px] rounded-full bg-[#A3A0A0]/60 scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out"></div>
+
+          <p class="text-white font-bold text-[14px] xl:text-[16px] leading-[20px] xl:leading-[24px] pr-6" style="font-family: 'Montserrat', sans-serif;">
+            Graphic Designer Intern
+          </p>
+          <p class="text-[#FFFFFF]/30 font-normal text-[12px] xl:text-[14px] leading-[18px] xl:leading-[20px]" style="font-family: 'Inter', sans-serif;">
+            Ollopa Corp. Quezon City, Manila Philippines
+          </p>
+          <div class="mt-[12px] w-full flex justify-end">
+            <p class="text-[#FFFFFF]/60 text-[12px] xl:text-[14px] mr-[6px]" style="font-family: 'Inter', sans-serif;">
+              2024
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-[2px] w-full p-[12px] flex flex-col gap-[8px] rounded-[8px] border border-[#A3A0A0]/30 bg-black relative group overflow-hidden">
+          <!-- Hover Circle -->
+          <div class="absolute top-[12px] right-[12px] w-[10px] h-[10px] rounded-full bg-[#A3A0A0]/60 scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out"></div>
+
+          <p class="text-white font-bold text-[14px] xl:text-[16px] leading-[20px] xl:leading-[24px] pr-6" style="font-family: 'Montserrat', sans-serif;">
+            Java Programming Trainee
+          </p>
+          <p class="text-[#FFFFFF]/30 font-normal text-[12px] xl:text-[14px] leading-[18px] xl:leading-[20px]" style="font-family: 'Inter', sans-serif;">
+            BCRV Tech-Voc, Inc.
+            Calapan City, Oriental Mindoro, Philippines 
+          </p>
+          <div class="mt-[12px] w-full flex justify-end">
+            <p class="text-[#FFFFFF]/60 text-[12px] xl:text-[14px] mr-[6px]" style="font-family: 'Inter', sans-serif;">
+              2024
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Projects and Certifications Containers -->
+    <div class="flex flex-col xl:flex-row gap-4 xl:gap-[12px] mx-4 xl:ml-[115px] xl:mr-0 mt-4 xl:mt-[12px] content-box">
+      <!-- Recent Company Projects Container -->
+      <div class="w-full xl:w-[720px] px-[20px] py-[24px] flex flex-col items-start gap-[10px] rounded-[16px] border border-[#A3A0A0]/20 bg-[#111] transform transition-all duration-200">
+
+        <!-- Icon + Title -->
+        <div class="flex items-center justify-between w-full">
+          <div class="flex items-center gap-[8px] mt-[4px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 6a2 2 0 012-2h4l2 2h8a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V6z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 13l2 2 4-4" />
+            </svg>
+            <p class="text-white font-bold text-[18px] xl:text-[20px] leading-[24px]" style="font-family: 'Montserrat', sans-serif;">Company Projects</p>
+          </div>
+          <a href="AllProjects.html" class="text-white font-montserrat text-[14px] leading-[17px] font-medium hover:text-yellow-400 transition-colors duration-200">
+             View All
+          </a>
+        </div>
+
+        <!-- Desktop Projects Layout (xl screens) -->
+        <div class="hidden xl:flex gap-[18px] mt-[12px]">
+          <!-- First Project -->
+          <div 
+          class="flex w-[331px] h-[234px] flex-col items-start gap-[16px] p-[20px] rounded-[8px] border border-[rgba(163,160,160,0.30)]"
+          style="transition: transform 0.4s ease;"
+          onmouseover="this.style.transform='translateY(-8px)'"
+          onmouseout="this.style.transform='translateY(0)'"
+        >
+            <!-- Title -->
+            <p class="text-white text-[16px] font-normal leading-[22px]" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
+              Quisha's Kitchenette Restaurant
+            </p>
+
+            <!-- Description -->
+            <p class="text-white text-[14px] font-light font-inter leading-[20px]">
+              A dynamic restaurant website designed to 
+              showcase Quisha's signature food products 
+              with visually appealing layouts.
+            </p>
+
+            <!-- Buttons Group -->
+            <div class="flex flex-col gap-[6px] mt-[4px] w-full">
+              <div class="flex gap-[12px]">
+                <button class="flex w-[56px] h-[25px] px-[12px] py-[4px] justify-center items-center gap-[10px] 
+                  rounded-[4px] border border-[#A3A0A0] text-white text-[12px] font-inter">
+                  Figma
+                </button>
+                <button class="flex w-[80px] h-[25px] px-[12px] py-[4px] justify-center items-center gap-[10px] 
+                  rounded-[4px] border border-[#A3A0A0] text-white text-[12px] font-inter">
+                  WordPress
+                </button>
+                <button class="flex w-[80px] h-[25px] px-[12px] py-[4px] justify-center items-center gap-[10px] 
+                  rounded-[4px] border border-[#A3A0A0] text-white text-[12px] font-inter">
+                  Elementor
+                </button>
+              </div>
+
+              <!-- Preview Button -->
+              <button
+          onclick="window.open('https://tamtechhub.com/website_5e79059e', '_blank');"
+          style="transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; cursor: pointer; background-color: black; color: white;"
+          onmouseover="
+            this.style.transform='scale(1.05)';
+            this.style.backgroundColor='white';
+            this.querySelector('svg').style.fill='black';
+          "
+          onmouseout="
+            this.style.transform='scale(1)';
+            this.style.backgroundColor='black';
+            this.querySelector('svg').style.fill='white';
+          "
+          class="flex items-center gap-[10px] px-[6px] py-[6px] rounded-[4px] text-[12px] font-inter w-fit mt-[6px]">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" viewBox="0 0 256 256">
+            <path d="M216,104a8,8,0,0,1-8-8V67.31L136.49,138.83a8,8,0,0,1-11.32-11.32L196.69,
+              56H160a8,8,0,0,1,0-16h56a8,8,0,0,1,8,8v56A8,8,0,0,1,216,104Zm-40,
+              32a8,8,0,0,0-8,8v56H56V88h56a8,8,0,0,0,0-16H48A8,8,0,0,0,40,
+              80V208a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V144A8,8,0,0,0,176,136Z"/>
+          </svg>
+        </button>
+            </div>
+          </div>
+
+          <!-- Second Project -->
+          <div 
+          class="flex w-[331px] h-[234px] flex-col items-start gap-[16px] p-[20px] 
+                 rounded-[8px] border border-[rgba(163,160,160,0.30)] bg-[#111]"
+          style="transition: transform 0.4s ease;"
+          onmouseover="this.style.transform='translateY(-8px)'"
+          onmouseout="this.style.transform='translateY(0)'"
+        >
+            <!-- Title -->
+            <p class="text-white text-[16px] font-semibold leading-[22px]" 
+               style="font-family: 'Montserrat', sans-serif;">
+              BangPop Thailand Restaurant
+            </p>
+
+            <!-- Description -->
+            <p class="text-white text-[14px] font-light font-inter leading-[20px]">
+              A static website prototype with a playful Thai restaurant theme, redesigned in Figma to highlight BangPop's signature foods.
+            </p>
+
+            <!-- Buttons Group -->
+            <div class="flex flex-col gap-[6px] mt-[4px] w-full">
+              <div class="flex gap-[12px]">
+                <button class="flex w-[56px] h-[25px] px-[12px] py-[4px] justify-center items-center gap-[10px] 
+                  rounded-[4px] border border-[#A3A0A0] text-white text-[12px] font-inter">
+                  Figma
+                </button>
+              </div>
+
+              <!-- Preview Button -->
+              <button
+          onclick="window.open('BangPop/BangPop.png', '_blank')"
+          style="transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; cursor: pointer; background-color: black; color: white;"
+          onmouseover="
+            this.style.transform='scale(1.05)';
+            this.style.backgroundColor='white';
+            this.querySelector('svg').style.fill='black';
+          "
+          onmouseout="
+            this.style.transform='scale(1)';
+            this.style.backgroundColor='black';
+            this.querySelector('svg').style.fill='white';
+          "
+          class="flex items-center gap-[10px] px-[6px] py-[6px] rounded-[4px] text-[12px] font-inter w-fit mt-[6px]">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" viewBox="0 0 256 256">
+            <path d="M216,104a8,8,0,0,1-8-8V67.31L136.49,138.83a8,8,0,0,1-11.32-11.32L196.69,
+              56H160a8,8,0,0,1,0-16h56a8,8,0,0,1,8,8v56A8,8,0,0,1,216,104Zm-40,
+              32a8,8,0,0,0-8,8v56H56V88h56a8,8,0,0,0,0-16H48A8,8,0,0,0,40,
+              80V208a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V144A8,8,0,0,0,176,136Z"/>
+          </svg>
+        </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile/Tablet Swipeable Projects (below xl) -->
+        <div class="xl:hidden mt-[12px] w-full">
+          <div class="swipe-container" id="projectsContainer">
+            <div class="swipe-wrapper" id="projectsWrapper">
+              <!-- Project 1 -->
+              <div class="swipe-slide px-2">
+                <div class="flex flex-col items-start gap-[16px] p-[20px] rounded-[8px] border border-[rgba(163,160,160,0.30)] min-h-[280px]">
+                  <p class="text-white text-[16px] font-semibold leading-[22px]" style="font-family: 'Montserrat', sans-serif;">
+                    Quisha's Kitchenette Restaurant
+                  </p>
+                  <p class="text-white text-[14px] font-light leading-[20px]" style="font-family: 'Inter', sans-serif;">
+                    A dynamic restaurant website designed to showcase Quisha's signature food products with visually appealing layouts.
+                  </p>
+                  <div class="flex flex-col gap-[12px] mt-auto w-full">
+                    <div class="flex gap-[8px] flex-wrap">
+                      <button class="flex px-[12px] py-[4px] justify-center items-center gap-[10px] rounded-[4px] border border-[#A3A0A0] text-white text-[12px]" style="font-family: 'Inter', sans-serif;">Figma</button>
+                      <button class="flex px-[12px] py-[4px] justify-center items-center gap-[10px] rounded-[4px] border border-[#A3A0A0] text-white text-[12px]" style="font-family: 'Inter', sans-serif;">WordPress</button>
+                      <button class="flex px-[12px] py-[4px] justify-center items-center gap-[10px] rounded-[4px] border border-[#A3A0A0] text-white text-[12px]" style="font-family: 'Inter', sans-serif;">Elementor</button>
+                    </div>
+                    <button onclick="window.open('https://tamtechhub.com/website_5e79059e', '_blank')" class="flex items-center justify-center gap-[10px] px-[16px] py-[8px] rounded-[4px] text-[14px] w-full bg-white text-black hover:bg-gray-200 transition-all duration-300" style="font-family: 'Inter', sans-serif;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M216,104a8,8,0,0,1-8-8V67.31L136.49,138.83a8,8,0,0,1-11.32-11.32L196.69,56H160a8,8,0,0,1,0-16h56a8,8,0,0,1,8,8v56A8,8,0,0,1,216,104Zm-40,32a8,8,0,0,0-8,8v56H56V88h56a8,8,0,0,0,0-16H48A8,8,0,0,0,40,80V208a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V144A8,8,0,0,0,176,136Z"/>
+                      </svg>
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div class="swipe-slide px-2">
+                <div class="flex flex-col items-start gap-[16px] p-[20px] rounded-[8px] border border-[rgba(163,160,160,0.30)] min-h-[280px]">
+                  <p class="text-white text-[16px] font-semibold leading-[22px]" style="font-family: 'Montserrat', sans-serif;">
+                    BangPop Thailand Restaurant
+                  </p>
+                  <p class="text-white text-[14px] font-light leading-[20px]" style="font-family: 'Inter', sans-serif;">
+                    A static website prototype with a playful Thai restaurant theme, redesigned in Figma to highlight BangPop's signature foods.
+                  </p>
+                  <div class="flex flex-col gap-[12px] mt-auto w-full">
+                    <div class="flex gap-[8px] flex-wrap">
+                      <button class="flex px-[12px] py-[4px] justify-center items-center gap-[10px] rounded-[4px] border border-[#A3A0A0] text-white text-[12px]" style="font-family: 'Inter', sans-serif;">Figma</button>
+                    </div>
+                    <button onclick="window.open('BangPop/BangPop.png', '_blank')" class="flex items-center justify-center gap-[10px] px-[16px] py-[8px] rounded-[4px] text-[14px] w-full bg-white text-black hover:bg-gray-200 transition-all duration-300" style="font-family: 'Inter', sans-serif;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M216,104a8,8,0,0,1-8-8V67.31L136.49,138.83a8,8,0,0,1-11.32-11.32L196.69,56H160a8,8,0,0,1,0-16h56a8,8,0,0,1,8,8v56A8,8,0,0,1,216,104Zm-40,32a8,8,0,0,0-8,8v56H56V88h56a8,8,0,0,0,0-16H48A8,8,0,0,0,40,80V208a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V144A8,8,0,0,0,176,136Z"/>
+                      </svg>
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <button onclick="prevProject()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-[#111] border border-[#A3A0A0]/30 rounded-full p-2 text-white hover:bg-[#222] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button onclick="nextProject()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-[#111] border border-[#A3A0A0]/30 rounded-full p-2 text-white hover:bg-[#222] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <!-- Dots indicator -->
+            <div class="flex justify-center gap-2 mt-4">
+              <button onclick="goToProject(0)" class="w-2 h-2 rounded-full transition-colors bg-white" id="projectDot0"></button>
+              <button onclick="goToProject(1)" class="w-2 h-2 rounded-full transition-colors bg-[#A3A0A0]/30" id="projectDot1"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Certifications Container -->
+      <div class="w-full xl:w-[478px] px-[20px] py-[24px] flex flex-col items-start gap-[10px] rounded-[16px] border border-[#A3A0A0]/20 bg-[#111] transform transition-all duration-200">
+        <div class="flex items-center gap-[8px] mt-[4px]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.5">
+            <rect x="3" y="4" width="18" height="16" rx="2" ry="2" />
+            <line x1="7" y1="8" x2="17" y2="8" stroke-linecap="round" />
+            <line x1="7" y1="12" x2="13" y2="12" stroke-linecap="round" />
+            <circle cx="17" cy="15" r="1.5" />
+          </svg>
+          <p class="text-white font-bold text-[18px] xl:text-[20px]" style="font-family: 'Montserrat', sans-serif;">Recent Certifications</p>
+        </div>
+
+        <!-- Clickable Certificate Container -->
+        <div onclick="document.getElementById('javaCertViewer').style.display = 'flex';"
+             class="mt-[6px] w-full p-[12px] flex flex-col gap-[10px] rounded-[8px] border border-[#A3A0A0]/30 bg-black hover:bg-[#0A1A33] transition-colors duration-200 cursor-pointer">
+          <p class="text-white font-bold text-[14px] xl:text-[16px] leading-[20px] xl:leading-[24px]" style="font-family: 'Montserrat', sans-serif;">
+            Certificate of Training - Java NC III
+          </p>
+          <p class="text-[#A3A0A0]/30 font-normal text-[12px] xl:text-[14px] leading-[18px] xl:leading-[20px]" style="font-family: 'Inter', sans-serif;">
+            BCRV TECHVOC INC & Tesda
+          </p>
+        </div>
+
+        <!-- Hidden Image Viewer Modal -->
+        <div id="javaCertViewer"
+             onclick="this.style.display='none'"
+             style="display: none;"
+             class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+          <img src="Cert one.jpg"
+               alt="Java NC2 Certificate"
+               class="max-w-[90%] max-h-[90%] rounded-[8px] border border-white shadow-lg" />
+        </div>
+          
+        <!-- Clickable Project Container -->
+        <div onclick="document.getElementById('elephantViewer').style.display = 'flex';"
+             class="mt-[3px] w-full p-[12px] flex flex-col gap-[10px] rounded-[8px] border border-[#A3A0A0]/30 bg-black hover:bg-[#0A1A33] transition-colors duration-200 cursor-pointer">
+          <p class="text-white font-bold text-[14px] xl:text-[16px] leading-[20px] xl:leading-[24px]" style="font-family: 'Montserrat', sans-serif;">
+            Elephant in the Boardroom
+          </p>
+          <p class="text-[#A3A0A0]/30 font-normal text-[12px] xl:text-[14px] leading-[18px] xl:leading-[20px]" style="font-family: 'Inter', sans-serif;">
+            Web Design & Development
+          </p>
+        </div>
+
+        <!-- Hidden Modal Viewer for Project Screenshot -->
+        <div id="elephantViewer"
+             onclick="this.style.display='none'"
+             style="display: none;"
+             class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+          <img src="Cert two.jpg" 
+               alt="Elephant in the Boardroom Project" 
+               class="max-w-[90%] max-h-[90%] rounded-[8px] border border-white shadow-lg" />
+        </div>
+
+        <!-- Clickable Ollopa Corporation Container -->
+        <div onclick="document.getElementById('ollopaViewer').style.display = 'flex';"
+             class="mt-[3px] w-full p-[12px] flex flex-col gap-[10px] rounded-[8px] border border-[#A3A0A0]/30 bg-black hover:bg-[#0A1A33] transition-colors duration-200 cursor-pointer">
+          <p class="text-white font-bold text-[14px] xl:text-[16px] leading-[20px] xl:leading-[24px]" style="font-family: 'Montserrat', sans-serif;">
+            Ollopa Corporation
+          </p>
+        </div>
+
+        <!-- Hidden Modal Viewer for Ollopa Project Image -->
+        <div id="ollopaViewer"
+             onclick="this.style.display='none'"
+             style="display: none;"
+             class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+          <img src="Cert three.jpg" 
+               alt="Ollopa Corporation Project" 
+               class="max-w-[90%] max-h-[90%] rounded-[8px] border border-white shadow-lg" />
+        </div>
+      </div>
+    </div> 
+
+    <!-- Connect and Personal Projects Containers -->
+    <div class="flex flex-col xl:flex-row gap-4 xl:gap-[12px] mx-4 xl:ml-[115px] xl:mr-0 mt-4 xl:mt-[12px] content-box">
+      <!-- Connect Container -->
+      <div class="w-full xl:w-[272px] px-[20px] py-[24px] flex flex-col items-start gap-[10px] rounded-[16px] border border-[#A3A0A0]/20 bg-[#111] transform transition-all duration-200">
+        <div class="flex items-center gap-[8px] mt-[4px]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="white" viewBox="0 0 256 256">
+            <path d="M216,48H40A16,16,0,0,0,24,64V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48ZM213.33,72,128,133.34,42.67,72ZM40,184V80l84.44,63.34a8,8,0,0,0,9.12,0L216,80v104Z"/>
+          </svg>
+          <p class="text-white font-bold text-[18px] xl:text-[20px] leading-[24px]" style="font-family: 'Montserrat', sans-serif;">Connect</p>
+        </div>
+
+        <a href="mailto:cuasaytimjosh@gmail.com" style="text-decoration: none;" class="w-full">
+          <div class="mt-[16px] w-full p-[12px] flex flex-col gap-[10px] rounded-[8px] border border-[#A3A0A0]/30 bg-black hover:bg-[#0A1A33] transition-colors duration-200 cursor-pointer">
+            <p class="text-white font-bold text-[14px] xl:text-[16px] leading-[20px] xl:leading-[24px]" style="font-family: 'Montserrat', sans-serif;">
+              Email
+            </p>
+            <p class="text-[#A3A0A0]/30 font-normal text-[12px] xl:text-[14px] mt-[-4px] leading-[18px] xl:leading-[20px]" style="font-family: 'Inter', sans-serif;">
+              cuasaytimjosh@gmail.com
+            </p>
+          </div>
+        </a>
+
+        <span class="mt-[20px] font-montserrat font-semibold text-[16px] leading-[22px] text-white">Social Links:</span>
+
+        <!-- Social Media Containers -->
+        <div class="mt-[-2px] flex gap-[8px] w-full">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/tim-josh-cuasay-788b8b35b/" target="_blank" rel="noopener noreferrer" 
+             class="flex-1 xl:w-[72px] h-[36px] flex items-center justify-center gap-[10px] rounded-[4px] border border-[#A3A0A0]/30 bg-black hover:bg-[#0A1A33] transition-all duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24" class="hover:scale-110 transition-transform">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+
+          <!-- Behance -->
+          <a href="https://www.behance.net/timjoshcuasay" target="_blank" rel="noopener noreferrer"
+             class="flex-1 xl:w-[72px] h-[36px] flex items-center justify-center gap-[10px] rounded-[4px] border border-[#A3A0A0]/30 bg-black hover:bg-[#0A1A33] transition-all duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24" class="hover:scale-110 transition-transform">
+              <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/share/1AMW3YyRad/" target="_blank" rel="noopener noreferrer"
+             class="flex-1 xl:w-[72px] h-[36px] flex items-center justify-center gap-[10px] rounded-[4px] border border-[#A3A0A0]/30 bg-black hover:bg-[#0A1A33] transition-all duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24" class="hover:scale-110 transition-transform">
+              <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+            </svg>
+          </a>
+        </div>
+
+        <span class="mt-[20px] font-montserrat font-semibold text-[16px] leading-[22px] text-white">Resume</span>
+
+        <a href="#" onclick="downloadViewAndPrintCV()" target="_blank" rel="noopener noreferrer"
+           class="flex p-[6px_24px] items-center justify-center gap-[10px] rounded-[4px] border border-[#A3A0A0]/30 bg-black hover:bg-[#0A1A33] transition-all duration-200 w-full">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24" class="hover:scale-110 transition-transform">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+            <path d="M14 2v6h6"/>
+            <path d="M16 13H8"/>
+            <path d="M16 17H8"/>
+            <path d="M10 9H8"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Personal Projects Container -->
+      <div class="w-full xl:w-[926px] px-[20px] py-[24px] flex flex-col items-start gap-[10px] rounded-[16px] border border-[#A3A0A0]/20 bg-[#111] transform transition-all duration-200">
+        <div class="flex items-center justify-between w-full">
+          <div class="flex items-center gap-[8px] mt-[4px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 6a2 2 0 012-2h4l2 2h8a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V6z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 13l2 2 4-4" />
+            </svg>
+            <p class="text-white font-bold text-[18px] xl:text-[20px]" style="font-family: 'Montserrat', sans-serif;">Personal Projects</p>
+          </div>
+          <a href="PersonalProjects.html" class="text-white font-montserrat text-[14px] leading-[17px] font-medium hover:text-yellow-400 transition-colors duration-200">
+           View All
+          </a>
+        </div>
+
+        <!-- Desktop Personal Projects Layout (xl screens) -->
+        <div class="hidden xl:flex gap-[14px] mt-[10px]">
+          <!-- First Personal Project -->
+          <div onclick="window.open('FitLifeGym/FitLifeGym.png', '_blank')" role="button" class="flex w-[435px] h-[245px] flex-col items-start gap-[16px] p-[20px] rounded-[8px] border border-[rgba(163,160,160,0.30)] cursor-pointer transform transition-all duration-300 hover:scale-[1.03]">
+            <!-- Title -->
+            <p class="text-white text-[16px] font-normal leading-[22px]" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
+              FitLife Gym
+            </p>
+
+            <!-- Description -->
+            <p class="text-white text-[14px] font-light font-inter leading-[20px]">
+              A static fitness website prototype designed in Figma to promote FitLife 
+              Gym's workout programs, membership plans, and healthy lifestyle services. 
+              The design emphasizes a modern and energetic layout with a strong visual 
+              hierarchy, responsive-ready structure, and clear call-to-actions to engage 
+              fitness enthusiasts and potential members.
+            </p>
+
+            <button class="flex w-[56px] h-[25px] px-[12px] py-[4px] justify-center items-center gap-[10px] 
+                  rounded-[4px] border border-[#A3A0A0] text-white text-[12px] font-inter">
+              Figma
+            </button>
+          </div>
+
+          <!-- Second Personal Project -->
+           <div onclick="window.open('Trident/Trident.png', '_blank')" role="button" class="flex w-[435px] h-[245px] flex-col items-start gap-[16px] p-[20px] rounded-[8px] border border-[rgba(163,160,160,0.30)] cursor-pointer transform transition-all duration-300 hover:scale-[1.03]">
+            <!-- Title -->
+            <p class="text-white text-[16px] font-normal leading-[22px]" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
+              Trident Vintage Wear
+            </p>
+
+            <!-- Description -->
+            <p class="text-white text-[14px] font-light font-inter leading-[20px]">
+              A static fashion website prototype designed in Figma to promote Trindent's 
+              bold and timeless vintage wear collection. The layout combines high-impact 
+              visuals with retro-inspired colors and clean modern UI elements. Crafted to 
+              reflect the brand's strong identity, the design uses dynamic composition, 
+              responsive structure.
+            </p>
+
+            <button class="flex w-[56px] h-[25px] px-[12px] py-[4px] justify-center items-center gap-[10px] 
+                  rounded-[4px] border border-[#A3A0A0] text-white text-[12px] font-inter">
+              Figma
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile/Tablet Swipeable Personal Projects (below xl) -->
+        <div class="xl:hidden mt-[12px] w-full">
+          <div class="swipe-container" id="personalContainer">
+            <div class="swipe-wrapper" id="personalWrapper">
+              <!-- Personal Project 1 -->
+              <div class="swipe-slide px-2">
+                <div onclick="window.open('FitLifeGym/FitLifeGym.png', '_blank')" class="flex flex-col items-start gap-[16px] p-[20px] rounded-[8px] border border-[rgba(163,160,160,0.30)] cursor-pointer min-h-[300px]">
+                  <p class="text-white text-[16px] font-semibold leading-[22px]" style="font-family: 'Montserrat', sans-serif;">
+                    FitLife Gym
+                  </p>
+                  <p class="text-white text-[14px] font-light leading-[20px]" style="font-family: 'Inter', sans-serif;">
+                    A static fitness website prototype designed in Figma to promote FitLife Gym's workout programs, membership plans, and healthy lifestyle services. The design emphasizes a modern and energetic layout with a strong visual hierarchy, responsive-ready structure, and clear call-to-actions to engage fitness enthusiasts and potential members.
+                  </p>
+                  <div class="mt-auto w-full">
+                    <button class="flex px-[12px] py-[4px] justify-center items-center gap-[10px] rounded-[4px] border border-[#A3A0A0] text-white text-[12px] mb-4" style="font-family: 'Inter', sans-serif;">
+                      Figma
+                    </button>
+                    <button class="flex items-center justify-center gap-[10px] px-[16px] py-[8px] rounded-[4px] text-[14px] w-full bg-white text-black hover:bg-gray-200 transition-all duration-300" style="font-family: 'Inter', sans-serif;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M216,104a8,8,0,0,1-8-8V67.31L136.49,138.83a8,8,0,0,1-11.32-11.32L196.69,56H160a8,8,0,0,1,0-16h56a8,8,0,0,1,8,8v56A8,8,0,0,1,216,104Zm-40,32a8,8,0,0,0-8,8v56H56V88h56a8,8,0,0,0,0-16H48A8,8,0,0,0,40,80V208a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V144A8,8,0,0,0,176,136Z"/>
+                      </svg>
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Personal Project 2 -->
+              <div class="swipe-slide px-2">
+                <div onclick="window.open('Trident/Trident.png', '_blank')" class="flex flex-col items-start gap-[16px] p-[20px] rounded-[8px] border border-[rgba(163,160,160,0.30)] cursor-pointer min-h-[300px]">
+                  <p class="text-white text-[16px] font-semibold leading-[22px]" style="font-family: 'Montserrat', sans-serif;">
+                    Trident Vintage Wear
+                  </p>
+                  <p class="text-white text-[14px] font-light leading-[20px]" style="font-family: 'Inter', sans-serif;">
+                    A static fashion website prototype designed in Figma to promote Trindent's bold and timeless vintage wear collection. The layout combines high-impact visuals with retro-inspired colors and clean modern UI elements. Crafted to reflect the brand's strong identity, the design uses dynamic composition, responsive structure.
+                  </p>
+                  <div class="mt-auto w-full">
+                    <button class="flex px-[12px] py-[4px] justify-center items-center gap-[10px] rounded-[4px] border border-[#A3A0A0] text-white text-[12px] mb-4" style="font-family: 'Inter', sans-serif;">
+                      Figma
+                    </button>
+                    <button class="flex items-center justify-center gap-[10px] px-[16px] py-[8px] rounded-[4px] text-[14px] w-full bg-white text-black hover:bg-gray-200 transition-all duration-300" style="font-family: 'Inter', sans-serif;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M216,104a8,8,0,0,1-8-8V67.31L136.49,138.83a8,8,0,0,1-11.32-11.32L196.69,56H160a8,8,0,0,1,0-16h56a8,8,0,0,1,8,8v56A8,8,0,0,1,216,104Zm-40,32a8,8,0,0,0-8,8v56H56V88h56a8,8,0,0,0,0-16H48A8,8,0,0,0,40,80V208a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V144A8,8,0,0,0,176,136Z"/>
+                      </svg>
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <button onclick="prevPersonal()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-[#111] border border-[#A3A0A0]/30 rounded-full p-2 text-white hover:bg-[#222] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button onclick="nextPersonal()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-[#111] border border-[#A3A0A0]/30 rounded-full p-2 text-white hover:bg-[#222] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <!-- Dots indicator -->
+            <div class="flex justify-center gap-2 mt-4">
+              <button onclick="goToPersonal(0)" class="w-2 h-2 rounded-full transition-colors bg-white" id="personalDot0"></button>
+              <button onclick="goToPersonal(1)" class="w-2 h-2 rounded-full transition-colors bg-[#A3A0A0]/30" id="personalDot1"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-16 xl:mt-24 mb-8 mx-4 xl:mx-[115px]">
+      <!-- Horizontal Line -->
+      <div class="h-px bg-[#4D4D4D] mb-6"></div>
+      
+      <!-- Footer Text Row -->
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+        <!-- Left Text -->
+        <p class="text-white text-[14px] xl:text-[16px] font-light leading-[24px] tracking-[-0.32px]" style="font-family: 'Inter', sans-serif;">
+          © 2025 Tim Josh. All rights reserved.
+        </p>
+
+        <!-- Right Text -->
+        <p class="text-white text-[14px] xl:text-[16px] font-light leading-[24px] tracking-[-0.32px]" style="font-family: 'Inter', sans-serif;">
+          Concept inspired by the creative style of Bryl Lim & inspired by the Vercel.app UI theme.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // CV Download Function
+    function downloadViewAndPrintCV() {
+      const fileUrl = 'Resume/CV_TIMJOSHCUASAY.pdf.pdf';
+      const newTab = window.open(fileUrl, '_blank');
+      const link = document.createElement('a');
+      link.href = fileUrl;
+      link.download = 'CV_TIMJOSHCUASAY.pdf.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      if (newTab) {
+        newTab.onload = () => {
+          newTab.focus();
+          newTab.print();
+        };
+      }
+    }
+
+    // Projects Swipe Functionality
+    let currentProjectIndex = 0;
+    const totalProjects = 2;
+
+    function updateProjectSlide() {
+      const wrapper = document.getElementById('projectsWrapper');
+      if (wrapper) {
+        wrapper.style.transform = `translateX(-${currentProjectIndex * 100}%)`;
+        
+        // Update dots
+        for (let i = 0; i < totalProjects; i++) {
+          const dot = document.getElementById(`projectDot${i}`);
+          if (dot) {
+            dot.className = i === currentProjectIndex 
+              ? 'w-2 h-2 rounded-full transition-colors bg-white'
+              : 'w-2 h-2 rounded-full transition-colors bg-[#A3A0A0]/30';
+          }
+        }
+      }
+    }
+
+    function nextProject() {
+      currentProjectIndex = (currentProjectIndex + 1) % totalProjects;
+      updateProjectSlide();
+    }
+
+    function prevProject() {
+      currentProjectIndex = (currentProjectIndex - 1 + totalProjects) % totalProjects;
+      updateProjectSlide();
+    }
+
+    function goToProject(index) {
+      currentProjectIndex = index;
+      updateProjectSlide();
+    }
+
+    // Personal Projects Swipe Functionality
+    let currentPersonalIndex = 0;
+    const totalPersonalProjects = 2;
+
+    function updatePersonalSlide() {
+      const wrapper = document.getElementById('personalWrapper');
+      if (wrapper) {
+        wrapper.style.transform = `translateX(-${currentPersonalIndex * 100}%)`;
+        
+        // Update dots
+        for (let i = 0; i < totalPersonalProjects; i++) {
+          const dot = document.getElementById(`personalDot${i}`);
+          if (dot) {
+            dot.className = i === currentPersonalIndex 
+              ? 'w-2 h-2 rounded-full transition-colors bg-white'
+              : 'w-2 h-2 rounded-full transition-colors bg-[#A3A0A0]/30';
+          }
+        }
+      }
+    }
+
+    function nextPersonal() {
+      currentPersonalIndex = (currentPersonalIndex + 1) % totalPersonalProjects;
+      updatePersonalSlide();
+    }
+
+    function prevPersonal() {
+      currentPersonalIndex = (currentPersonalIndex - 1 + totalPersonalProjects) % totalPersonalProjects;
+      updatePersonalSlide();
+    }
+
+    function goToPersonal(index) {
+      currentPersonalIndex = index;
+      updatePersonalSlide();
+    }
+
+    // Touch/Swipe Support for Mobile
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
+    // Projects touch events
+    const projectsContainer = document.getElementById('projectsContainer');
+    if (projectsContainer) {
+      projectsContainer.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      });
+
+      projectsContainer.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+      });
+
+      projectsContainer.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const diffX = startX - currentX;
+        if (Math.abs(diffX) > 50) { // Minimum swipe distance
+          if (diffX > 0) {
+            nextProject();
+          } else {
+            prevProject();
+          }
+        }
+      });
+    }
+
+    // Personal projects touch events
+    const personalContainer = document.getElementById('personalContainer');
+    if (personalContainer) {
+      personalContainer.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      });
+
+      personalContainer.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+      });
+
+      personalContainer.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const diffX = startX - currentX;
+        if (Math.abs(diffX) > 50) { // Minimum swipe distance
+          if (diffX > 0) {
+            nextPersonal();
+          } else {
+            prevPersonal();
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -87,6 +87,19 @@
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+    @keyframes fade-gold {
+    0%, 100% {
+      color: rgba(255, 215, 0, 0.3);
+    }
+    50% {
+      color: rgba(255, 215, 0, 1);
+    }
+  }
+
+  .fade-gold {
+    animation: fade-gold 2s infinite ease-in-out;
+  }
   </style>
 
 </head>
@@ -576,7 +589,10 @@
             Certificate of Training - Java NC III
           </p>
           <p class="text-[#FFFFFF]/30 font-normal text-[12px] xl:text-[14px] leading-[18px] xl:leading-[20px]" style="font-family: 'Inter', sans-serif;">
-            BCRV TECHVOC INC & Tesda | Top 2 Awardee
+            BCRV TECHVOC INC & Tesda |
+            <span class="fade-gold text-[12px] xl:text-[14px] font-normal leading-[20px]" style="font-family: 'Inter', sans-serif;">
+              Top 2 Performer
+            </span>
           </p>
         </div>
 

@@ -862,11 +862,11 @@
   <script>
     // CV Download Function
     function downloadViewAndPrintCV() {
-      const fileUrl = 'Resume/Resume_CUASAYTIMJOSH.pdf';
+      const fileUrl = 'Resume/CV_TIM.pdf';
       const newTab = window.open(fileUrl, '_blank');
       const link = document.createElement('a');
       link.href = fileUrl;
-      link.download = 'Resume_CUASAYTIMJOSH.pdf';
+      link.download = 'CV_TIM.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

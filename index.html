@@ -821,9 +821,14 @@
       <!-- Footer Text Row -->
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
         <!-- Left Text -->
-        <p class="text-white text-[14px] xl:text-[16px] font-light leading-[24px] tracking-[-0.32px]" style="font-family: 'Inter', sans-serif;">
-          © 2025 Tim Josh. All rights reserved.
+        <p id="footer-year" class="text-white text-[14px] xl:text-[16px] font-light leading-[24px] tracking-[-0.32px]" style="font-family: 'Inter', sans-serif;">
+          © <span id="current-year"></span> Tim Josh. All rights reserved.
         </p>
+
+        <script>
+          document.getElementById("current-year").textContent = new Date().getFullYear();
+        </script>
+
 
         <!-- Right Text -->
         <p class="text-white text-[14px] xl:text-[16px] font-light leading-[24px] tracking-[-0.32px]" style="font-family: 'Inter', sans-serif;">

@@ -75,6 +75,27 @@
   .fade-gold {
     animation: fade-gold 2s infinite ease-in-out;
   }
+
+    /* Typing Indicator Animation */
+
+  @keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent }
+  50% { border-color: white }
+}
+
+.typing-animation {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: 0;
+  animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
   </style>
 </head>
 
@@ -109,8 +130,9 @@
 
         <!-- Description -->
         <p class="inter text-white text-[14px] sm:text-[16px] leading-[20px] sm:leading-[22px] font-normal mt-[12px] transform transition-all duration-200 max-w-[300px] xl:max-w-none">
-          UI/UX Design Enthusiast | WordPress Developer
+          <span class="typing-animation">UI/UX Design Enthusiast | WordPress Developer</span>
         </p>
+
 
         <!-- CTA Buttons -->
         <div class="mt-[20px] xl:mt-[24px] flex flex-col sm:flex-row xl:flex-row gap-[10px] w-full sm:w-auto content-box">

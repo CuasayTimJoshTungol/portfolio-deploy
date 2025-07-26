@@ -304,17 +304,61 @@
   </div>
 </body>
 
-  <!--Start of Tawk.to Script-->
+  <!-- Custom Chat Button Replacing Tawk.to Default -->
+<div id="chatContainer" class="fixed bottom-6 right-6 z-50">
+  <button onclick="Tawk_API.maximize();" id="chatTrigger"
+    class="flex items-center justify-center gap-2 px-4 py-2.5 lg:px-5 lg:py-2.5 rounded-full bg-white text-gray-800 border border-gray-300 shadow-md hover:shadow-lg transition-all duration-300
+           w-12 h-12 lg:w-auto lg:h-auto">
+    <!-- Animated Icon -->
+    <div class="animate-bounce-slow">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 text-gray-800" viewBox="0 0 24 24">
+        <path fill-rule="evenodd"
+          d="M2.25 12c0-4.97 4.78-9 10.75-9s10.75 4.03 10.75 9-4.78 9-10.75 9c-1.21 0-2.38-.19-3.45-.55l-5.11 1.56a.75.75 0 01-.93-.94l1.35-4.12A8.9 8.9 0 012.25 12zm7.25-.75a1.25 1.25 0 112.5 0 1.25 1.25 0 01-2.5 0zm5.25 0a1.25 1.25 0 112.5 0 1.25 1.25 0 01-2.5 0z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+
+    <!-- Desktop Text -->
+    <span class="hidden lg:inline text-sm font-semibold">Chat with Tim</span>
+  </button>
+</div>
+
+<!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6873e65679c4ad190dda5d38/1j02bngku';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+  (function () {
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/6873e65679c4ad190dda5d38/1j02bngku';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+  })();
+</script>
+
+<!-- Custom visibility toggle for chat button -->
+<script type="text/javascript">
+  Tawk_API = Tawk_API || {};
+
+  // Hide default Tawk.to launcher
+  Tawk_API.onLoad = function () {
+    Tawk_API.hideWidget();
+  };
+
+  // Hide the custom chat button when chat is open
+  Tawk_API.onChatMaximized = function () {
+    document.getElementById('chatContainer').style.display = 'none';
+  };
+
+  // Show the custom chat button again when chat is minimized
+  Tawk_API.onChatMinimized = function () {
+    document.getElementById('chatContainer').style.display = 'block';
+  };
+
+  // Also show it again when the chat is ended
+  Tawk_API.onChatEnded = function () {
+    document.getElementById('chatContainer').style.display = 'block';
+  };
 </script>
 <!--End of Tawk.to Script-->
   

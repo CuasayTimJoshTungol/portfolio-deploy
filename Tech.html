@@ -21,13 +21,38 @@
 
     /* For chat feature */
 
-  @keyframes bounce-slow {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
+ @keyframes bounce-attractive {
+    0%, 100% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    30% {
+      transform: translateY(-12px);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-6px);
+    }
   }
 
-  .animate-bounce-slow {
-    animation: bounce-slow 2s ease-in-out infinite;
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+    }
+  }
+
+  .animate-bounce-attractive {
+    animation: bounce-attractive 1.8s infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s infinite;
   }
   </style>
 </head>
@@ -225,13 +250,14 @@
   </div>
 </body>
 
-  <!-- Custom Chat Button Replacing Tawk.to Default -->
+ <!-- Custom Chat Button Replacing Tawk.to Default -->
 <div id="chatContainer" class="fixed bottom-6 right-6 z-50">
   <button onclick="Tawk_API.maximize();" id="chatTrigger"
     class="flex items-center justify-center gap-2 px-4 py-2.5 lg:px-5 lg:py-2.5 rounded-full bg-white text-gray-800 border border-gray-300 shadow-md hover:shadow-lg transition-all duration-300
-           w-12 h-12 lg:w-auto lg:h-auto">
+           w-12 h-12 lg:w-auto lg:h-auto animate-pulse-glow hover:scale-105">
+
     <!-- Animated Icon -->
-    <div class="animate-bounce-slow">
+    <div class="animate-bounce-attractive">
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 text-gray-800" viewBox="0 0 24 24">
         <path fill-rule="evenodd"
           d="M2.25 12c0-4.97 4.78-9 10.75-9s10.75 4.03 10.75 9-4.78 9-10.75 9c-1.21 0-2.38-.19-3.45-.55l-5.11 1.56a.75.75 0 01-.93-.94l1.35-4.12A8.9 8.9 0 012.25 12zm7.25-.75a1.25 1.25 0 112.5 0 1.25 1.25 0 01-2.5 0zm5.25 0a1.25 1.25 0 112.5 0 1.25 1.25 0 01-2.5 0z"

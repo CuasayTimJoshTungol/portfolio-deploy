@@ -780,27 +780,37 @@
 
 
           <!-- Second Personal Project -->
-           <div onclick="window.open('Trident/Trident.png', '_blank')" role="button" class="flex w-[435px] h-[245px] flex-col items-start gap-[16px] p-[20px] rounded-[8px] border border-[rgba(163,160,160,0.30)] cursor-pointer transform transition-all duration-300 hover:scale-[1.03]">
-            <!-- Title -->
-            <p class="text-white text-[16px] font-normal leading-[22px]" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
-              Trident Vintage Wear
-            </p>
+<div onclick="window.open('Trident/Trident.png', '_blank')" 
+     role="button" 
+     class="relative group overflow-hidden flex w-[435px] h-[245px] flex-col items-start gap-[16px] p-[20px] 
+            rounded-[8px] border border-[rgba(163,160,160,0.30)] cursor-pointer transform transition-all duration-300 hover:scale-[1.03]">
 
-            <!-- Description -->
-            <p class="text-white text-[14px] font-light font-inter leading-[20px] text-justify">
-              A static fashion website prototype designed in Figma to promote Trindent's 
-              bold and timeless vintage wear collection. The layout combines high-impact 
-              visuals with retro-inspired colors and clean modern UI elements. Crafted to 
-              reflect the brand's strong identity, the design uses dynamic composition, 
-              responsive structure.
-            </p>
+  <!-- Hover Image -->
+  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-[8px] overflow-hidden">
+    <img src="Trident/Trident.png" alt="Trident Preview" class="w-full h-full object-cover" />
+  </div>
 
-            <button class="flex w-[56px] h-[25px] px-[12px] py-[4px] justify-center items-center gap-[10px] 
-                  rounded-[4px] border border-[#A3A0A0] text-white text-[12px] font-inter">
-              Figma
-            </button>
-          </div>
-        </div>
+  <!-- Title -->
+  <p class="text-white text-[16px] font-normal leading-[22px]" 
+     style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
+    Trident Vintage Wear
+  </p>
+
+  <!-- Description -->
+  <p class="text-white text-[14px] font-light font-inter leading-[20px] text-justify">
+    A static fashion website prototype designed in Figma to promote Trindent's 
+    bold and timeless vintage wear collection. The layout combines high-impact 
+    visuals with retro-inspired colors and clean modern UI elements. Crafted to 
+    reflect the brand's strong identity, the design uses dynamic composition, 
+    responsive structure.
+  </p>
+
+  <button class="flex w-[56px] h-[25px] px-[12px] py-[4px] justify-center items-center gap-[10px] 
+                rounded-[4px] border border-[#A3A0A0] text-white text-[12px] font-inter">
+    Figma
+  </button>
+</div>
+</div>
 
         <!-- Mobile/Tablet Swipeable Personal Projects (below xl) -->
         <div class="xl:hidden mt-[12px] w-full">

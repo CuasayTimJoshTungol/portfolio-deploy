@@ -80,28 +80,37 @@
         </span>
       </div>
 
-      <!-- FitLife Gym Container -->
-      <div onclick="window.open('FitLifeGym/HarpFootwear.png', '_blank')" role="button"
-           class="flex w-[435px] ml-[502px] mt-[56px] h-[245px] flex-col items-start gap-[16px] p-[20px] 
-                  rounded-[8px] border border-[rgba(163,160,160,0.30)] bg-[#111]
-                  cursor-pointer transform transition-all duration-300 hover:scale-[1.03]">
-        <!-- Title -->
-        <p class="text-white text-[16px] font-normal leading-[22px]" 
-           style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
-          Harp Footwear
-        </p>
-        <!-- Description -->
-        <p class="text-white text-[14px] font-light font-inter leading-[20px] text-justify">
-          Harp Footwear is a static website prototype that showcases vintage-inspired 
-          footwear rooted in timeless craftsmanship. The design reflects a blend of 
-          heritage and modern aesthetics, creating a clean and focused layout. It 
-          emphasizes storytelling, subtle branding, and a curated browsing experience.
-        </p>
-        <button class="flex-none w-[56px] h-[25px] justify-center items-center 
-           rounded-[4px] border border-[#A3A0A0] text-white text-[12px] font-inter bg-transparent overflow-hidden">
-          Figma
-        </button>
-      </div>
+      <!-- Harp Footwear Container -->
+<div onclick="window.open('FitLifeGym/HarpFootwear.png', '_blank')" role="button"
+     class="relative group overflow-hidden flex w-[435px] ml-[502px] mt-[56px] h-[245px] flex-col items-start gap-[16px] p-[20px] 
+            rounded-[8px] border border-[rgba(163,160,160,0.30)] bg-[#111]
+            cursor-pointer transform transition-all duration-300 hover:scale-[1.03]">
+
+  <!-- Hover Image -->
+  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-[8px] overflow-hidden">
+    <img src="FitLifeGym/HarpFootwear.png" alt="Harp Footwear Preview" class="w-full h-full object-cover" />
+  </div>
+
+  <!-- Title -->
+  <p class="text-white text-[16px] font-normal leading-[22px]" 
+     style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
+    Harp Footwear
+  </p>
+
+  <!-- Description -->
+  <p class="text-white text-[14px] font-light font-inter leading-[20px] text-justify">
+    Harp Footwear is a static website prototype that showcases vintage-inspired 
+    footwear rooted in timeless craftsmanship. The design reflects a blend of 
+    heritage and modern aesthetics, creating a clean and focused layout. It 
+    emphasizes storytelling, subtle branding, and a curated browsing experience.
+  </p>
+
+  <button class="flex-none w-[56px] h-[25px] justify-center items-center 
+         rounded-[4px] border border-[#A3A0A0] text-white text-[12px] font-inter bg-transparent overflow-hidden">
+    Figma
+  </button>
+</div>
+
 
       <!-- Trident Container -->
       <div onclick="window.open('Trident/Trident.png', '_blank')" role="button"

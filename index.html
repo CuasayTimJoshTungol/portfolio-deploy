@@ -175,13 +175,7 @@
             <!-- Shine Animation Layer -->
             <span class="absolute top-0 left-[-100%] w-[60%] h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-70 transform skew-x-[-20deg] animate-[shine_1.5s_ease-in-out_infinite]"></span>
            </button>
-          </a>
-
-          <div id="datetime"
-           class="hidden lg:flex flex-wrap justify-end items-center text-right font-[Inter] text-base leading-6 text-white lg:ml-[246px]">
-           <h1 class="font-medium">Loading...</h1>
-         </div>
-          
+          </a>  
         </div>
       </div>
     </div>
@@ -915,45 +909,6 @@
       </div>
     </div>
   </div>
-
-  
-  <script>
-  function updateDateTime() {
-    const now = new Date();
-
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const months = [
-      "January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
-    ];
-
-    let dayName = days[now.getDay()];
-    let month = months[now.getMonth()];
-    let date = now.getDate();
-    let year = now.getFullYear();
-
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-    let seconds = now.getSeconds();
-    let ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12 || 12;
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    let timeStr = `${hours}:${minutes}:${seconds} ${ampm}`;
-    let fullDateTime = `${dayName}, ${month} ${date}, ${year} - ${timeStr}`;
-
-    const content = now.getDay() !== 0
-      ? `<h1 class="font-medium text-base leading-6 text-white font-[Inter]">${fullDateTime}</h1>`
-      : `<h1 class="font-medium text-base leading-6 text-red-600 font-[Inter]">It's Sunday - Closed</h1>`;
-
-    document.getElementById('datetime').innerHTML = content;
-  }
-
-  updateDateTime();
-  setInterval(updateDateTime, 1000);
-</script>
-  
 
   <script>
     // CV Download Function

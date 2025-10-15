@@ -906,11 +906,11 @@
   <script>
     // CV Download Function
     function downloadViewAndPrintCV() {
-      const fileUrl = 'Resume/TIMJOSHCUASAY_UPDATED RESUME';
+      const fileUrl = 'Resume/TIMJOSHCUASAY_UPDATED RESUME.pdf';
       const newTab = window.open(fileUrl, '_blank');
       const link = document.createElement('a');
       link.href = fileUrl;
-      link.download = 'TIMJOSHCUASAY_UPDATED RESUME';
+      link.download = 'TIMJOSHCUASAY_UPDATED RESUME.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
